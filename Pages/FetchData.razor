@@ -1,0 +1,25 @@
+@page "/fetchdata"
+@inject Logger log
+@inject AppState state
+
+<h2>Id: @state.Id</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (LogItem regel in log.Log)
+        {
+        <tr>
+            <td>@regel.Instance</td>
+            <td>@regel.LastAliveTime</td>
+            <td>@regel.State</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
